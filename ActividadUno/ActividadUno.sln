@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActividadUno", "ActividadUno\ActividadUno.csproj", "{DA50FE02-E0D7-43FD-8C7E-1ADE6C1FCFB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gato", "Gato\Gato.csproj", "{8F4C9E9A-0EBC-49D3-9F9B-3879E70E4345}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA50FE02-E0D7-43FD-8C7E-1ADE6C1FCFB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA50FE02-E0D7-43FD-8C7E-1ADE6C1FCFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA50FE02-E0D7-43FD-8C7E-1ADE6C1FCFB0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DA50FE02-E0D7-43FD-8C7E-1ADE6C1FCFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA50FE02-E0D7-43FD-8C7E-1ADE6C1FCFB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA50FE02-E0D7-43FD-8C7E-1ADE6C1FCFB0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8F4C9E9A-0EBC-49D3-9F9B-3879E70E4345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F4C9E9A-0EBC-49D3-9F9B-3879E70E4345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F4C9E9A-0EBC-49D3-9F9B-3879E70E4345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F4C9E9A-0EBC-49D3-9F9B-3879E70E4345}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

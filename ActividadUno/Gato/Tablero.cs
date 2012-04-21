@@ -1,18 +1,59 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
+﻿using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 
 namespace Gato
 {
-    public class Tablero
+    public class Tablero : Grid
     {
+        private const int NumeroFilas = 3;
+        private const int NumeroColumnas = 3;
 
+
+        public Tablero()
+        {
+            Background = new SolidColorBrush(Colors.White);
+            ShowGridLines = true;
+            DefinirFilas();
+            DefinirColumnas();
+            InicializarCeldas();
+        }
+
+        private void DefinirFilas()
+        {
+            for (var i = 0; i < NumeroFilas; i++)
+            {
+                RowDefinitions.Add(new RowDefinition());
+            }
+        }
+
+        private void DefinirColumnas()
+        {
+            for (var i = 0; i < NumeroColumnas; i++)
+            {
+                ColumnDefinitions.Add(new ColumnDefinition());
+            }
+        }
+
+        private void InicializarCeldas()
+        {
+            for (var i = 0; i < NumeroFilas; i++)
+            {
+                for (var j = 0; j < NumeroColumnas; j++)
+                {
+                    var controlEnCelda = CrearAgregarControlEnCelda();
+                    
+                    SetRow(controlEnCelda, i);
+                    SetColumn(controlEnCelda, j);
+                }
+            }
+        }
+
+
+        private Celda CrearAgregarControlEnCelda()
+        {
+            var celda = new Celda();
+            Children.Add(celda);
+            return celda;
+        }
     }
 }

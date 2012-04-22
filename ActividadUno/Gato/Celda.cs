@@ -1,5 +1,7 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Gato
 {
@@ -8,52 +10,50 @@ namespace Gato
         public int Fila { get; set; }
         public int Columna { get; set; }
         public Estado Estado { get; set; }
+        public Brain GameBrain { get; set; }
 
         public Celda()
         {
             ColocarEstadoVisual();
-            //Content = "texto";
-            //Foreground = new SolidColorBrush(Colors.Purple);
             Tap += CeldaTap;
         }
 
         private void ColocarEstadoVisual()
         {
-            ColocarFondo(ObtenerColorPorEstado());
+            ColocarFondo(ObtenerFondoPorEstado());
         }
 
-        private Color ObtenerColorPorEstado()
+        private ImageBrush ObtenerFondoPorEstado()
         {
-            var color = Colors.Transparent;
+            var fondo = new ImageBrush { ImageSource = new BitmapImage(new Uri("blank.png", UriKind.Relative)), Stretch = Stretch.Uniform };
             switch (Estado)
             {
-                case Estado.Inactivo:
-                    color = Colors.Transparent;
-                    break;
                 case Estado.JugadorUno:
-                    color = Colors.Red;
+                    fondo = new ImageBrush { ImageSource = new BitmapImage(new Uri("xNegra.png",UriKind.Relative)), Stretch = Stretch.Uniform};
                     break;
                 case Estado.JugadorDos:
-                    color = Colors.Blue;
+                    fondo = new ImageBrush { ImageSource = new BitmapImage(new Uri("oNegra.png", UriKind.Relative)), Stretch = Stretch.Uniform };
                     break;
             }
-            return color;
+            return fondo;
         }
 
-        private void ColocarFondo(Color color)
+        private void ColocarFondo(ImageBrush fondo  )
         {
-            Background = new SolidColorBrush(color);
+            Background = fondo;
         }
 
         void CeldaTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            //MessageBox.Show(string.Format("Fila es {0} columna {1}.", Fila.ToString(CultureInfo.InvariantCulture), Columna.ToString(CultureInfo.InvariantCulture)));
+            if (GameBrain.JuegoBloqueado) return;
+            Estado = GameBrain.ObtenerJugadorActual();
+            GameBrain.IndicarEstadoCelda(Fila, Columna, Estado);
             ColocarEstadoVisual();
         }
 
         public void ReestablecerEstadoInicial()
         {
-            Estado = Estado.Inactivo;
+            Estado = Estado.Ninguno;
             ColocarEstadoVisual();
         }
     }

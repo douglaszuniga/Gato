@@ -19,7 +19,7 @@
         Grid.Row="1"
         xmlns:juego="clr-namespace:Gato;assembly=Gato"
           >
-        <juego:Tablero />
+        <juego:GatoUI />
     </Grid>
     
 </phone:PhoneApplicationPage>

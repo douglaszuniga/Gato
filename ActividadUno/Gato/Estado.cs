@@ -2,8 +2,9 @@
 {
     public enum Estado
     {
-        Inactivo = 0,
+        Ninguno = 0,
         JugadorUno = 1,
-        JugadorDos = 2
+        JugadorDos = 2,
+        Continuar = 3
     }
 }

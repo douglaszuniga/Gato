@@ -49,8 +49,12 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Brain.cs" />
+    <Compile Include="Cabecera.cs" />
     <Compile Include="Celda.cs" />
+    <Compile Include="Constantes.cs" />
     <Compile Include="Estado.cs" />
+    <Compile Include="GatoUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tablero.cs" />
   </ItemGroup>
